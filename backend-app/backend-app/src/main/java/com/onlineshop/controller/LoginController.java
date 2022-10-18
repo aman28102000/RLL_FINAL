@@ -3,6 +3,8 @@ package com.onlineshop.controller;
 import java.util.List;
 
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.onlineshop.bean.Login;
-import com.onlineshop.service.LoginService;
+import com.onlineshop.service.loginService;
 
 @RestController
 @RequestMapping("login")
@@ -24,7 +26,7 @@ public class LoginController {
 
 	
 	@Autowired
-	LoginService loginService;
+	loginService loginService;
 	
 	
 	@PostMapping(value = "signIn",consumes = MediaType.APPLICATION_JSON_VALUE)

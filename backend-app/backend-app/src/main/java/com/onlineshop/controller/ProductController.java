@@ -24,34 +24,35 @@ public class ProductController {
 
 	@Autowired
 	ProductService productService;
-	
-	@PostMapping(value = "storeProduct",consumes = MediaType.APPLICATION_JSON_VALUE)
+
+	@PostMapping(value = "storeProduct", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String storeProduct(@RequestBody Product product) {
 		return productService.storeProduct(product);
 	}
-	
-	@PatchMapping(value = "updateProduct",consumes = MediaType.APPLICATION_JSON_VALUE)
+
+	@PatchMapping(value = "updateProduct", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String updateProduct(@RequestBody Product product) {
 		return productService.updateProduct(product);
 	}
-	
-	@GetMapping(value="findAllProduct",produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@GetMapping(value = "findAllProduct", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Product> getAllProduct() {
 		return productService.getAllProducts();
 	}
-	
-	@GetMapping(value="findProductByPrice/{price}",produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@GetMapping(value = "findProductByPrice/{price}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Product> findProductByPrice(@PathVariable("price") float price) {
 		return productService.findProductByPrice(price);
 	}
-	
-	@GetMapping(value="findAllProduct/{pid}")
+
+	@GetMapping(value = "findAllProduct/{pid}")
 	public String findProductById(@PathVariable("pid") int pid) {
 		return productService.findProductById(pid);
 	}
-	
-	@DeleteMapping(value="deleteProduct/{pid}")
+
+	@DeleteMapping(value = "deleteProduct/{pid}")
 	public String deleteProductUsingId(@PathVariable("pid") int pid) {
 		return productService.deleteProduct(pid);
 	}
+
 }
